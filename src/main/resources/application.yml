@@ -17,9 +17,6 @@ spring:
       #监控路径
       aop-patterns: com.boss.demo.controller.*
       web-stat-filter:
-        enabled: true
-          url-pattern: /api/*
-          session-stat-enable: true
         #排除一些不必要的拦截
         exclusions: .js,.gif,.jpg,.bmp,.png,.css,.ico,/druid/*
   #mybatis配置
