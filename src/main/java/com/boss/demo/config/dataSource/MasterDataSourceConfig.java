@@ -29,13 +29,13 @@ import javax.sql.DataSource;
 public class MasterDataSourceConfig {
     static final String PACKAGE = "com.boss.demo.mapper.masterDataSource";
     static final String MAPPER_LOCATION = "classpath:mapper/masterDataSource/*.xml";
-    @Value("${spring.datasource.run.url}")
+    @Value("${spring.datasource.master.url}")
     private String url;
-    @Value("${spring.datasource.run.username}")
+    @Value("${spring.datasource.master.username}")
     private String username;
-    @Value("${spring.datasource.run.password}")
+    @Value("${spring.datasource.master.password}")
     private String password;
-    @Value("${spring.datasource.run.driver-class-name}")
+    @Value("${spring.datasource.master.driver-class-name}")
     private String driverClass;
 
     @Bean(name = "MasterDataSource")

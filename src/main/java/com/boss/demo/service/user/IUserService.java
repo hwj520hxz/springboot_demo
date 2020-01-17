@@ -16,7 +16,9 @@ import java.util.List;
 public interface IUserService {
     List<User> queryUser() throws BusinessException;
 
-    List<User> queryUserById(String id) throws BusinessException;
+    User queryUserByAcount(String userName, String password) throws BusinessException;
+
+    List<User> queryUserById(String userId) throws BusinessException;
 
     List<User> queryUser2();
 }

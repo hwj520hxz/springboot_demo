@@ -16,5 +16,7 @@ public interface UserMapper {
 
     List<User> queryUser();
 
-    List<User> queryUserById(@Param("id") String id);
+    User queryUserByAcount(@Param("userName") String userName, @Param("password") String password);
+
+    List<User> queryUserById(@Param("userId") String userId);
 }

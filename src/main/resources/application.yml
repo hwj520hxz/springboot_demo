@@ -7,9 +7,12 @@ spring:
   #多环境配置
   profiles:
     active: dev
+  #是否允许覆盖已经存在的bean
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     druid:
-      # 开启druid监控 http://localhost:8081/druid/index.html
+      # 开启druid监控 http://localhost:8080/druid/index.html
       stat-view-servlet:
         enabled: true
         login-username: admin

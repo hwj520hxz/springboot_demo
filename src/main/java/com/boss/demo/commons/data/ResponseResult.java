@@ -104,6 +104,11 @@ public class ResponseResult<T> {
         return resp;
     }
 
+    public static <T> ResponseResult error(){
+        ResponseResult resp = new ResponseResult(false, ErrorStatus.ERROR);
+        return resp;
+    }
+
     public static <T> ResponseResult error(T data,String message){
         ResponseResult resp = new ResponseResult(false, ErrorStatus.ERROR,data,message);
         return resp;

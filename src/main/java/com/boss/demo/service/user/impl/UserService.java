@@ -36,6 +36,16 @@ public class UserService implements IUserService {
         }
     }
 
+    public User queryUserByAcount(String userName, String password) throws BusinessException {
+        try {
+            return userMapper.queryUserByAcount(userName, password);
+        } catch (Exception e){
+            e.printStackTrace();
+            String errMsg = MessageFormat.format("不存在该用户[{0}],异常信息为[{1}]",userName,e.getMessage());
+            throw new BusinessException(errMsg);
+        }
+    }
+
 
     public List<User> queryUserById(String id) throws BusinessException {
         try {

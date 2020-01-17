@@ -3,17 +3,41 @@
 <mapper namespace="com.boss.demo.mapper.masterDataSource.UserMapper">
 
     <resultMap id="userMap" type="com.boss.demo.entity.User">
-        <result property="id" column="id"/>
-        <result property="name" column="name"/>
-        <result property="sex" column="sex"/>
+        <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+        <result column="USERNAME" jdbcType="VARCHAR" property="userName" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+        <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+        <result column="USER_SEX" jdbcType="VARCHAR" property="userSex" />
+        <result column="USER_TEL" jdbcType="VARCHAR" property="userTel" />
+        <result column="STATUS" jdbcType="VARCHAR" property="userStatus" />
+        <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime" />
+        <result column="UPDATE_TIME" jdbcType="VARCHAR" property="updateTime" />
     </resultMap>
+
+    <sql id="Base_Column_List">
+        USER_ID, USERNAME, PASSWORD, USER_EMAIL, USER_SEX, USER_TEL, STATUS, CREATE_TIME, UPDATE_TIME
+    </sql>
 
     <select id="queryUser" resultMap="userMap">
         select * from user
     </select>
 
     <select id="queryUserById" resultMap="userMap">
-        select * from user where id = #{id}
+        select * from user where userId = #{userId}
+    </select>
+
+    <select id="queryUserByAcount" parameterType="com.boss.demo.entity.User" resultMap="userMap">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        <where>
+            <if test="userName != null">
+                username = #{userName,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null">
+                and password = #{password,jdbcType=VARCHAR}
+            </if>
+        </where>
     </select>
 
 

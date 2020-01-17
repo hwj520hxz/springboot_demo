@@ -29,13 +29,13 @@ import javax.sql.DataSource;
 public class SlaverDataSourceConfig {
     static final String PACKAGE = "com.boss.demo.mapper.slaverDataSource";
     static final String SLAVER_LOCATION = "classpath:mapper/slaverDataSource/*.xml";
-    @Value("${spring.datasource.debug.url}")
+    @Value("${spring.datasource.slaver.url}")
     private String url;
-    @Value("${spring.datasource.debug.username}")
+    @Value("${spring.datasource.slaver.username}")
     private String username;
-    @Value("${spring.datasource.debug.password}")
+    @Value("${spring.datasource.slaver.password}")
     private String password;
-    @Value("${spring.datasource.debug.driver-class-name}")
+    @Value("${spring.datasource.slaver.driver-class-name}")
     private String driverClass;
 
     @Bean(name = "SlaverDataSource")
