@@ -50,6 +50,11 @@ public class ResponseResult<T> {
         this.message = message;
     }
 
+    public ResponseResult(boolean success, String message) {
+        this.success = success;
+        this.message = message;
+    }
+
     public ResponseResult(boolean success, ErrorStatus code) {
         this.success = success;
         this.code = code.getCode();
@@ -104,8 +109,13 @@ public class ResponseResult<T> {
         return resp;
     }
 
-    public static <T> ResponseResult error(){
+    public static ResponseResult error(){
         ResponseResult resp = new ResponseResult(false, ErrorStatus.ERROR);
+        return resp;
+    }
+
+    public static ResponseResult error(String message){
+        ResponseResult resp = new ResponseResult(false, message);
         return resp;
     }
 

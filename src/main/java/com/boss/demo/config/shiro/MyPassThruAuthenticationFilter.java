@@ -45,14 +45,18 @@ public class MyPassThruAuthenticationFilter extends PassThruAuthenticationFilter
 //    }
 
     /**
-     * @Description: 获取请求方法，若为OPTIONS请求直接返回True放行
+     * @Description: 给请求加上请求头（可以在前端设置请求头，后端就不需要设置）
      **/
     @Override
     public boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
 
         HttpServletRequest httpRequest = WebUtils.toHttp(request);
         HttpServletResponse httpResponse = WebUtils.toHttp(response);
-        if (httpRequest.getMethod().equals(RequestMethod.OPTIONS.name())) {
+        if (httpRequest.getMethod().equals(RequestMethod.OPTIONS.name())
+                || httpRequest.getMethod().equals(RequestMethod.GET.name())
+                || httpRequest.getMethod().equals(RequestMethod.POST.name())
+                || httpRequest.getMethod().equals(RequestMethod.DELETE.name())
+                || httpRequest.getMethod().equals(RequestMethod.PUT.name())) {
             httpResponse.setHeader("Access-control-Allow-Origin", httpRequest.getHeader("Origin"));
             httpResponse.setHeader("Access-Control-Allow-Methods", httpRequest.getMethod());
             httpResponse.setHeader("Access-Control-Allow-Headers", httpRequest.getHeader("Access-Control-Request-Headers"));

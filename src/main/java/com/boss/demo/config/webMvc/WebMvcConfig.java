@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 /**
  * @author ：hwj
  * @version 版本号：V1.0
- * @Description ：
+ * @Description ：前端配置
  */
 
 @Configuration
