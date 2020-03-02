@@ -3,23 +3,22 @@ package com.boss.demo.controller;
 import com.boss.demo.commons.data.ResponseResult;
 import com.boss.demo.commons.util.MD5Utils;
 import com.boss.demo.entity.User;
+import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
 import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.UnsupportedEncodingException;
 
 /**
  * @author ：hwj
  * @version 版本号：V1.0
  * @Description ：使用shiro进行登录
  */
+@Api(tags = "用户登录接口")
 @RestController
 public class LoginController {
 
