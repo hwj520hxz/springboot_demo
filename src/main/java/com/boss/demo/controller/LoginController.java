@@ -1,5 +1,6 @@
 package com.boss.demo.controller;
 
+import com.boss.demo.commons.annotations.LoggerOperator;
 import com.boss.demo.commons.data.ResponseResult;
 import com.boss.demo.commons.util.MD5Utils;
 import com.boss.demo.entity.User;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 
     @PostMapping(value = "/login")
+    @LoggerOperator(description = "用户登录")
     public ResponseResult login(String username, String password) {
 
         try {

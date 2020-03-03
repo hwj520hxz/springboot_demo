@@ -21,7 +21,7 @@ logging:
     com.boss.demo.mapper: debug
 #端口配置
 server:
-  port: 8080
+  port: 8081
 
 
 #多数据源配置

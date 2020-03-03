@@ -1,5 +1,6 @@
 package com.boss.demo.controller;
 
+import com.boss.demo.commons.annotations.LoggerOperator;
 import com.boss.demo.commons.data.ResponseResult;
 import com.boss.demo.commons.exception.BusinessException;
 import com.boss.demo.entity.User;
@@ -31,6 +32,7 @@ public class UserController {
     private IUserService userService;
 
 
+    @LoggerOperator(description = "用户查询")
     @ApiOperation(value = "查询用户",notes = "查询用户信息",httpMethod = "GET")
     @GetMapping(value = "/queryUser")
 //    @CrossOrigin
