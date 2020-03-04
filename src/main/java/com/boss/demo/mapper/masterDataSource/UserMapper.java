@@ -4,6 +4,7 @@ import com.boss.demo.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 创建人：何伟杰
@@ -15,6 +16,8 @@ import java.util.List;
 public interface UserMapper {
 
     List<User> queryUser();
+
+    List<Map<String,Object>> queryUsers();
 
     User queryUserByAcount(@Param("userName") String userName, @Param("password") String password);
 

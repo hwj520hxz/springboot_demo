@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 创建人：何伟杰
@@ -33,6 +34,15 @@ public class UserService implements IUserService {
     public List<User> queryUser() throws BusinessException {
         try {
             return userMapper.queryUser();
+        } catch (Exception e){
+            throw new BusinessException("查询出现异常");
+        }
+    }
+
+    @Override
+    public List<Map<String, Object>> queryUsers() throws BusinessException {
+        try {
+            return userMapper.queryUsers();
         } catch (Exception e){
             throw new BusinessException("查询出现异常");
         }

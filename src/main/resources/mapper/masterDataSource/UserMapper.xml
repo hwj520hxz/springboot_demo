@@ -22,6 +22,11 @@
         select * from user
     </select>
 
+    <select id="queryUsers" resultType="map">
+        select USERNAME "userName",USER_EMAIL "userEmail", USER_TEL "userTel"
+        from user
+    </select>
+
     <select id="queryUserById" resultMap="userMap">
         select * from user where userId = #{userId}
     </select>

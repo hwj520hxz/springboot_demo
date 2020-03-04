@@ -4,6 +4,7 @@ import com.boss.demo.commons.exception.BusinessException;
 import com.boss.demo.entity.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 创建人：何伟杰
@@ -15,6 +16,8 @@ import java.util.List;
  */
 public interface IUserService {
     List<User> queryUser() throws BusinessException;
+
+    List<Map<String,Object>> queryUsers() throws BusinessException;
 
     User queryUserByAcount(String userName, String password) throws BusinessException;
 

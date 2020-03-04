@@ -2,9 +2,7 @@ package com.boss.demo.controller;
 
 import com.boss.demo.commons.annotations.LoggerOperator;
 import com.boss.demo.commons.data.ResponseResult;
-import com.boss.demo.commons.util.ExportExcelUtil;
 import com.boss.demo.commons.util.MD5Utils;
-import com.boss.demo.entity.EventDTO;
 import com.boss.demo.entity.User;
 import io.swagger.annotations.Api;
 import org.apache.shiro.SecurityUtils;
@@ -13,14 +11,8 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author ：hwj
